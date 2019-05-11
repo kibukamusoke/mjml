@@ -1,0 +1,9 @@
+builder-spreadsheets:
+  #build: .
+  image: kibukamusoke/mjml
+  ports:
+  - "8998:8998"
+  restart: "always"
+  environment:
+    PORT: 8998
+    SERVER_URL: "https://mjml.tracksolconnect.com"
