@@ -13,6 +13,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.post('/render', (req, res) => {
 
+    res.setHeader('Content-Type', 'application/json');
     if(!req.body.mjml) {
         res.status(400).json({code: 400, message: 'No mjml provided'});
         return;
