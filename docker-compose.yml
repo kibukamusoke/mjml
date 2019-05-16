@@ -1,4 +1,4 @@
-builder-spreadsheets:
+builder-mjml:
   #build: .
   image: kibukamusoke/mjml
   ports:

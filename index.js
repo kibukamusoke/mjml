@@ -5,8 +5,9 @@ let path = require('path');
 
 
 let app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
@@ -24,7 +25,9 @@ app.post('/render', (req, res) => {
 
 });
 
-let port = process.env.PORT || 8997;
+
+
+let port = process.env.PORT || 8998;
 let httpServer = require('http').createServer(app);
 httpServer.listen(port, function () {
     console.log('mjml engine running on port ' + port + '.');
